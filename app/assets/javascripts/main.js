@@ -13,6 +13,13 @@ app.controller('Vineviewer', function($scope, $sce, videoFactory){
 
   });
 
+  $scope.nextVid = function(){
+    currentVideoCounter += 1;
+    console.log(currentVideoCounter)
+    var url = popularVines[currentVideoCounter].videoUrl;
+    // debugger
+    $scope.currentVideoUrl = $sce.trustAsResourceUrl(url);
+  }
 
 });
 
